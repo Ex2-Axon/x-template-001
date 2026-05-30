@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Orbitron", sans-serif;
+  --font-body: "Rajdhani", sans-serif;
+
+  --color-background: #020408;
+  --color-surface: #050b14;
+  --color-primary: #00f5ff;
+  --color-accent: #ff006e;
+  --color-text: #e0f7ff;
+  --color-muted: #3a6b7a;
+
+  --shadow-neon: 0 0 5px var(--color-primary), 0 0 20px var(--color-primary);
+  --shadow-neon-accent: 0 0 5px var(--color-accent), 0 0 20px var(--color-accent);
+}
+
+@layer base {
+  html, body, #root {
+    @apply min-h-screen m-0 p-0 overflow-x-hidden;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    @apply tracking-wider uppercase;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-surface/40 backdrop-blur-md border border-primary/20;
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 10px var(--color-primary);
+  }
+
+  .neon-text-accent {
+    text-shadow: 0 0 10px var(--color-accent);
+  }
+}
